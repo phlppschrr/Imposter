@@ -22,7 +22,11 @@ Die Auswahl **Gemischt / Jugendlich / Erwachsen** ist ausdrücklich **keine Juge
 
 Gemeinsame Begriffe bleiben in allen Profilen verfügbar. Jugend- und Erwachsenenprofil ergänzen den gemeinsamen Pool jeweils unterschiedlich. Es geht dabei um Bekanntheit und Lebenswelt, nicht darum, Inhalte für Minderjährige zu sperren.
 
-Der eingebaute Wortschatz ist nach Themen kategorisiert und für den verdeckten Modus als ähnliche Begriffspaare gepflegt. Kategorien sind Alltag, Essen & Trinken, Orte, Freizeit & Sport, Internet & Medien, Schule/Studium/Beruf, Reisen, Menschen & Beziehungen sowie Tiere & Natur.
+Der eingebaute Katalog umfasst aktuell **271 kuratierte Begriffspaare in 12 Kategorien**. 139 Paare sind generationenübergreifend, 72 erweitern die jugendliche Begriffswelt und 60 die erwachsene Begriffswelt. Dadurch enthalten Jugend- und Erwachsenenprofil jeweils rund 200 mögliche Paare.
+
+Die Kategorien sind **Alltag**, **Essen & Trinken**, **Orte**, **Freizeit & Sport**, **Internet & Medien**, **Schule, Studium & Beruf**, **Reisen & Verkehr**, **Menschen & Beziehungen**, **Tiere & Natur**, **Technik & Digitales**, **Mode & Körper** sowie **Musik & Kultur**.
+
+Der Katalog ist bewusst als Paarbestand gepflegt, damit der verdeckte Imposter keinen beliebigen Begriff aus derselben Kategorie erhält, sondern einen semantisch nahen Gegenbegriff. Beispiele: `Krokodil ↔ Alligator`, `Kühlschrank ↔ Gefrierschrank`, `Döner ↔ Dürüm`, `Bouldern ↔ Klettern`, `TikTok ↔ Instagram Reels`, `Vorlesung ↔ Seminar` und `Wohnmobil ↔ Wohnwagen`.
 
 ## Offline-Modus
 
@@ -66,7 +70,8 @@ Die App verwendet überwiegend relative Pfade und kann z. B. unter `https://exam
 
 - `index.html` – App-Einstieg
 - `src/main.js` – Oberfläche, lokaler Modus und Online-Polling
-- `src/game.js` – lokale Spiellogik, Varianten und Wortschatz
+- `src/game.js` – lokale Spiellogik und Varianten
+- `src/catalog.js` – vollständiger Offline-Begriffskatalog
 - `api/index.php` – JSON-API und SQLite-Raumverwaltung
 - `api/words.php` – serverseitiger Wortschatz
 - `data/` – zur Laufzeit erzeugte SQLite-Datenbank
