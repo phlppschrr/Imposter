@@ -1,23 +1,5 @@
-export const CATEGORIES={
-'Alltag':[
-{a:'Kühlschrank',b:'Gefrierschrank',profiles:['all']},{a:'Zahnbürste',b:'Mundspülung',profiles:['all']},{a:'Staubsauger',b:'Wischmopp',profiles:['all']},{a:'Schlüssel',b:'Schlüsselkarte',profiles:['all']},{a:'Wecker',b:'Handywecker',profiles:['all']},{a:'Briefkasten',b:'Paketstation',profiles:['all']},{a:'Kaffeemaschine',b:'Wasserkocher',profiles:['adult']},{a:'Steuererklärung',b:'Nebenkostenabrechnung',profiles:['adult']},{a:'Überstunden',b:'Gleitzeit',profiles:['adult']},{a:'Taschengeld',b:'Guthabenkarte',profiles:['youth']},{a:'Schulranzen',b:'Sportbeutel',profiles:['youth']}],
-'Essen & Trinken':[
-{a:'Pizza',b:'Flammkuchen',profiles:['all']},{a:'Sushi',b:'Poké Bowl',profiles:['all']},{a:'Döner',b:'Dürüm',profiles:['all']},{a:'Pommes',b:'Kartoffelchips',profiles:['all']},{a:'Pfannkuchen',b:'Waffel',profiles:['all']},{a:'Kaffee',b:'Energy-Drink',profiles:['all']},{a:'Espresso',b:'Cappuccino',profiles:['adult']},{a:'Aperol Spritz',b:'Hugo',profiles:['adult']},{a:'Bubble Tea',b:'Eistee',profiles:['youth']},{a:'Takis',b:'Doritos',profiles:['youth']}],
-'Orte':[
-{a:'Kino',b:'Theater',profiles:['all']},{a:'Strand',b:'Freibad',profiles:['all']},{a:'Bahnhof',b:'Flughafen',profiles:['all']},{a:'Museum',b:'Galerie',profiles:['all']},{a:'Campingplatz',b:'Ferienpark',profiles:['all']},{a:'Büro',b:'Coworking-Space',profiles:['adult']},{a:'Baumarkt',b:'Möbelhaus',profiles:['adult']},{a:'Schulhof',b:'Jugendzentrum',profiles:['youth']},{a:'Skatepark',b:'Bolzplatz',profiles:['youth']},{a:'Festival',b:'Abschlussfahrt',profiles:['youth']}],
-'Freizeit & Sport':[
-{a:'Fußball',b:'Handball',profiles:['all']},{a:'Bowling',b:'Kegeln',profiles:['all']},{a:'Wandern',b:'Spazieren',profiles:['all']},{a:'Bouldern',b:'Klettern',profiles:['all']},{a:'Karaoke',b:'Singstar',profiles:['all']},{a:'Golf',b:'Minigolf',profiles:['adult']},{a:'Stammtisch',b:'Pubquiz',profiles:['adult']},{a:'Skateboard',b:'Longboard',profiles:['youth']},{a:'Fortnite',b:'Minecraft',profiles:['youth']},{a:'FIFA',b:'Rocket League',profiles:['youth']}],
-'Internet & Medien':[
-{a:'YouTube',b:'Netflix',profiles:['all']},{a:'Podcast',b:'Hörbuch',profiles:['all']},{a:'Meme',b:'GIF',profiles:['all']},{a:'Wikipedia',b:'Google',profiles:['all']},{a:'Tagesschau',b:'Heute Journal',profiles:['adult']},{a:'Facebook',b:'LinkedIn',profiles:['adult']},{a:'Tatort',b:'Polizeiruf 110',profiles:['adult']},{a:'TikTok',b:'Instagram Reels',profiles:['youth']},{a:'Snapchat',b:'BeReal',profiles:['youth']},{a:'Twitch',b:'YouTube Live',profiles:['youth']},{a:'Discord',b:'WhatsApp',profiles:['youth']},{a:'Streamer',b:'Influencer',profiles:['youth']}],
-'Schule, Studium & Beruf':[
-{a:'Hausaufgabe',b:'Referat',profiles:['youth']},{a:'Klassenarbeit',b:'Test',profiles:['youth']},{a:'Abschlussball',b:'Abschlussfahrt',profiles:['youth']},{a:'Mensa',b:'Cafeteria',profiles:['all']},{a:'Vorlesung',b:'Seminar',profiles:['adult']},{a:'Homeoffice',b:'Bürotag',profiles:['adult']},{a:'Lebenslauf',b:'Anschreiben',profiles:['adult']},{a:'Gehaltsverhandlung',b:'Bewerbungsgespräch',profiles:['adult']},{a:'Azubi',b:'Praktikant',profiles:['all']}],
-'Reisen':[
-{a:'Hotel',b:'Ferienwohnung',profiles:['all']},{a:'Koffer',b:'Rucksack',profiles:['all']},{a:'Reisepass',b:'Personalausweis',profiles:['all']},{a:'Wohnmobil',b:'Wohnwagen',profiles:['all']},{a:'Städtetrip',b:'Pauschalreise',profiles:['adult']},{a:'Geschäftsreise',b:'Workation',profiles:['adult']},{a:'Klassenfahrt',b:'Jugendfreizeit',profiles:['youth']},{a:'Interrail',b:'Roadtrip',profiles:['youth']}],
-'Menschen & Beziehungen':[
-{a:'Freund',b:'Bekannter',profiles:['all']},{a:'Nachbar',b:'Mitbewohner',profiles:['all']},{a:'Hochzeit',b:'Verlobung',profiles:['all']},{a:'Kollege',b:'Chef',profiles:['adult']},{a:'Blind Date',b:'Speed-Dating',profiles:['adult']},{a:'Schwiegermutter',b:'Stiefmutter',profiles:['adult']},{a:'Crush',b:'Bestie',profiles:['youth']},{a:'Klassenkamerad',b:'Sitznachbar',profiles:['youth']},{a:'Gruppenchat',b:'Privatchat',profiles:['youth']}],
-'Tiere & Natur':[
-{a:'Delfin',b:'Wal',profiles:['all']},{a:'Krokodil',b:'Alligator',profiles:['all']},{a:'Kaninchen',b:'Hase',profiles:['all']},{a:'Alpaka',b:'Lama',profiles:['all']},{a:'Frosch',b:'Kröte',profiles:['all']},{a:'Biene',b:'Wespe',profiles:['all']},{a:'Robbe',b:'Seehund',profiles:['all']},{a:'Eichhörnchen',b:'Streifenhörnchen',profiles:['all']}]
-};
+import { CATEGORIES } from './catalog.js';
+export { CATEGORIES } from './catalog.js';
 export const VARIANTS={
 open:{name:'Offener Imposter',description:'Der Imposter bekommt kein Wort und weiß, dass er der Imposter ist.'},
 secret:{name:'Verdeckter Imposter',description:'Der Imposter bekommt einen ähnlichen Gegenbegriff und weiß nicht, dass er der Imposter ist.'}
