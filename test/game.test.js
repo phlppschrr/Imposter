@@ -1,8 +1,10 @@
-import test from'node:test';import assert from'node:assert/strict';import{pickRound,clampImposters,tallyVotes,CATEGORIES,VARIANTS,PROFILES,pairsFor}from'../src/game.js';
-test('vocabulary has categories and curated pairs',()=>{assert.ok(Object.keys(CATEGORIES).length>=8);assert.ok(pairsFor('Zufall','mixed').length>=30);for(const p of pairsFor('Zufall','mixed'))assert.ok(p.a&&p.b)});
-test('profiles add different generation-specific vocabulary',()=>{const m=pairsFor('Zufall','mixed'),y=pairsFor('Zufall','youth'),a=pairsFor('Zufall','adult');assert.ok(y.length>m.length);assert.ok(a.length>m.length);assert.notDeepEqual(y.map(x=>x.a),a.map(x=>x.a));assert.deepEqual(Object.keys(PROFILES),['mixed','youth','adult'])});
+import test from'node:test';import assert from'node:assert/strict';import{clampImposters,pickRound,tallyVotes,CATEGORIES,VARIANTS,PROFILES,pairsFor}from'../src/game.js';
+const all=Object.values(CATEGORIES).flat();
+test('catalogue is large and well distributed',()=>{assert.ok(Object.keys(CATEGORIES).length>=12);assert.ok(all.length>=250);for(const [name,pairs] of Object.entries(CATEGORIES))assert.ok(pairs.length>=15,name+' needs more pairs')});
+test('every catalogue entry is a valid distinct pair',()=>{for(const p of all){assert.equal(typeof p.a,'string');assert.equal(typeof p.b,'string');assert.ok(p.a.trim()&&p.b.trim());assert.notEqual(p.a.toLowerCase(),p.b.toLowerCase());assert.ok(p.profiles.every(x=>['all','youth','adult'].includes(x)))}});
+test('profiles have substantial distinct vocabularies',()=>{const m=pairsFor('Zufall','mixed'),y=pairsFor('Zufall','youth'),a=pairsFor('Zufall','adult');assert.ok(m.length>=130);assert.ok(y.length>=190);assert.ok(a.length>=185);assert.notDeepEqual(y.map(x=>x.a),a.map(x=>x.a));assert.deepEqual(Object.keys(PROFILES),['mixed','youth','adult'])});
 test('both imposter variants exist',()=>assert.deepEqual(Object.keys(VARIANTS),['open','secret']));
-test('open imposter knows role and has no word',()=>{const r=pickRound(['A','B','C','D'],'Zufall',1,[],'mixed','open'),i=r.roles.find(x=>x.imposter);assert.equal(i.displayWord,null)});
-test('hidden imposter gets a different similar word',()=>{const r=pickRound(['A','B','C','D'],'Zufall',1,[],'mixed','secret'),i=r.roles.find(x=>x.imposter),c=r.roles.find(x=>!x.imposter);assert.ok(i.displayWord);assert.notEqual(i.displayWord,c.displayWord);assert.equal(c.displayWord,r.word)});
-test('imposter count leaves two civilians',()=>assert.equal(clampImposters(9,5),3));
+test('open imposter receives no word',()=>{const r=pickRound(['A','B','C','D'],'Zufall',1,[],'mixed','open');assert.equal(r.roles.find(x=>x.imposter).displayWord,null)});
+test('hidden imposter receives a different paired word',()=>{const r=pickRound(['A','B','C','D'],'Zufall',1,[],'mixed','secret'),i=r.roles.find(x=>x.imposter),c=r.roles.find(x=>!x.imposter);assert.ok(i.displayWord);assert.notEqual(i.displayWord,c.displayWord);assert.equal(c.displayWord,r.word)});
+test('imposter count always leaves two civilians',()=>{assert.equal(clampImposters(9,5),3);assert.equal(clampImposters(0,5),1)});
 test('votes tally correctly',()=>assert.deepEqual(tallyVotes({a:'x',b:'y',c:'x'}).winners,['x']));
