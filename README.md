@@ -2,18 +2,27 @@
 
 Mobile-first Partyspiel als installierbare PWA. **Lokales Spielen funktioniert nach dem ersten Laden komplett offline.** Für Online-Räume genügt klassisches Shared Hosting mit PHP und SQLite – kein Node.js, Docker, WebSocket-Server, npm-Build oder externer Dienst.
 
-## Spielmodi
+## Spielvarianten
 
-- **Klassisch:** Alle außer dem Imposter sehen dasselbe geheime Wort.
-- **Mit Hinweis:** Der Imposter sieht nicht das Wort, aber die gewählte Kategorie.
-- **Chaos:** Für größere Gruppen und mehrere Imposter gedacht.
-- **Blitzrunde:** Kurze Runden mit zwei Minuten Diskussion.
+### Offener Imposter
+Der Imposter bekommt **keinen Begriff**. Dadurch weiß er sofort, dass er der Imposter ist und versucht aus den Beschreibungen der anderen den gesuchten Begriff zu erschließen.
 
-Es gibt 8 Kategorien: Alltag, Essen & Trinken, Orte, Tiere, Freizeit & Sport, Medien & Kultur, Reisen sowie Beziehungen & Party. Die App enthält bereits weit über 100 Begriffe. Zusätzlich können pro Runde eigene Wörter verwendet werden.
+### Verdeckter Imposter
+Alle Spieler sehen einen Begriff. Die normalen Spieler sehen Begriff A, der Imposter einen **kuratierten, ähnlichen Gegenbegriff B** – und bekommt nicht mitgeteilt, dass er der Imposter ist. Beispiele sind `Krokodil ↔ Alligator`, `Bowling ↔ Kegeln`, `TikTok ↔ Instagram Reels` oder `Wohnmobil ↔ Wohnwagen`. Erst bei der Auflösung werden beide Begriffe und der Imposter sichtbar.
 
-### Altersfilter
+Bei eigenen Wörtern kann man für diesen Modus Paare als `Begriff A | Begriff B` eingeben.
 
-**Jugendlich / familienfreundlich** verwendet ausschließlich den `youth`-Wortschatz. **Alle erwachsen (18+)** behält die normalen Begriffe bei und ergänzt je Kategorie erwachsenere Party-, Dating-, Ausgeh- und Alltagsthemen. Der Filter wird sowohl lokal als auch im Online-Raum angewendet.
+## Begriffswelten statt Altersfreigabe
+
+Die Auswahl **Gemischt / Jugendlich / Erwachsen** ist ausdrücklich **keine Jugendschutz- oder 18+-Freigabe**. Sie steuert, aus welcher Lebens- und Begriffswelt die Runde stärker schöpft:
+
+- **Gemischt:** generationenübergreifend bekannte Begriffe.
+- **Jugendlich:** zusätzlich mehr Schule, Gaming, Social Media, Streaming und aktuelle Jugendkultur, etwa TikTok, BeReal, Twitch, Discord, Klassenfahrt oder Schulhof.
+- **Erwachsen:** zusätzlich mehr Beruf, Haushalt, Finanzen, klassische Medien und erwachsene Alltagssituationen, etwa Steuererklärung, Nebenkostenabrechnung, Homeoffice, Gehaltsverhandlung oder Tagesschau.
+
+Gemeinsame Begriffe bleiben in allen Profilen verfügbar. Jugend- und Erwachsenenprofil ergänzen den gemeinsamen Pool jeweils unterschiedlich. Es geht dabei um Bekanntheit und Lebenswelt, nicht darum, Inhalte für Minderjährige zu sperren.
+
+Der eingebaute Wortschatz ist nach Themen kategorisiert und für den verdeckten Modus als ähnliche Begriffspaare gepflegt. Kategorien sind Alltag, Essen & Trinken, Orte, Freizeit & Sport, Internet & Medien, Schule/Studium/Beruf, Reisen, Menschen & Beziehungen sowie Tiere & Natur.
 
 ## Offline-Modus
 
